@@ -1,8 +1,8 @@
-{% set build = 11 %}
+{% set build = 0 %}
 {% set name = "lammps" %}
-{% set version = "stable_29Aug2024" %}
+{% set version = "stable_22Jul2025_update4" %}
 {% set version_plugins = "patch_17Apr2024" %}
-{% set sha256 = "6112e0cc352c3140a4874c7f74db3c0c8e30134024164509ecf3772b305fde2e" %}
+{% set sha256 = "411088d9c03339e025f6a975e0a5741bb9e3f351cc39eda220ab22ac318fe2fb" %}
 {% set date = datetime.datetime.strptime(version.split('_')[1], "%d%b%Y") %}
 {% set conda_version = "{:%Y.%m.%d}".format(date) %}
 {% set cuda_major = environ.get("cuda_compiler_version", "0.0").split(".")[0]|int %}
@@ -99,6 +99,7 @@ requirements:
     - plumed >=2.4,<2.10
     - plumed * {{ mpi_prefix }}_*  # [mpi != 'nompi' and build_platform == target_platform]
     - cuda-version {{ cuda_compiler_version }}  # [(cuda_compiler_version or "None") != "None"]
+    - yaml-cpp
 
   run:
     - python
