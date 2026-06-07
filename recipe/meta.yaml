@@ -99,6 +99,7 @@ requirements:
     - plumed >=2.4,<2.10
     - plumed * {{ mpi_prefix }}_*  # [mpi != 'nompi' and build_platform == target_platform]
     - cuda-version {{ cuda_compiler_version }}  # [(cuda_compiler_version or "None") != "None"]
+    - yaml-cpp
 
   run:
     - python
