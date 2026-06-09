@@ -44,8 +44,8 @@ build:
   track_features:
     - cudatoolkit               # [cuda_compiler_version != "None"]
   script_env:
-{% if cuda_major == 11 %}
-    - Kokkos_OPT_ARGS=-DKokkos_ARCH_KEPLER35=ON
+{% if cuda_major == 13 %}
+    - Kokkos_OPT_ARGS=-DKokkos_ARCH_AMPERE80=ON
 {% endif %}
 {% if cuda_major == 12 %}
     - Kokkos_OPT_ARGS=-DKokkos_ARCH_MAXWELL50=ON
