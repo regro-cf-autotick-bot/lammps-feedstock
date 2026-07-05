@@ -35,7 +35,7 @@ libjpeg_turbo:
 libnetcdf:
 - 4.10.0
 libpnetcdf:
-- 1.14.1
+- 1.15.0
 libpng:
 - '1.6'
 macos_machine:
